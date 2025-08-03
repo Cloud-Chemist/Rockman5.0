@@ -3,6 +3,8 @@ from youtubesearchpython import VideosSearch
 import pafy
 import vlc
 
+pafy.set_backend("yt-dlp")
+
 def play_youtube(query):
     search = VideosSearch(query, limit=1).result()
     if not search['result']:
@@ -14,4 +16,5 @@ def play_youtube(query):
     playurl = best.url
     player = vlc.MediaPlayer(playurl)
     player.play()
+
     print(f"Playing: {search['result'][0]['title']}")
