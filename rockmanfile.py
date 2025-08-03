@@ -1,6 +1,6 @@
 # assistant.py
 import cv2
-from face_recog import recognize_face
+from face_recognition import recognize_face
 from voice_chatbot import get_voice_input, respond
 from youtube_player import play_youtube
 
@@ -37,4 +37,5 @@ while True:
         break
 
     else:
+
         respond(command)
